@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><%= title %></title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/header %>
+	<div class="container documents">
+
+		<% if (emsg == 'undefined') { var emsg = ''; } %> <%= emsg %>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+
+					<% if ( txlist != "nothing" ) { %>
+
+					<div class="panel-heading">
+						<h3 class="panel-title">BlockInformation</h3>
+					</div>
+					<table class="table">
+						<thead>
+						</thead>
+						<tr>
+							<th>Info</th>
+							<th>Value</th>
+						</tr>
+						<tbody id='tableItems'>
+							<tr>
+								<td>stateHash</td> <% if (stateHash == 'undefined') { var stateHash = ''; } %>
+								<td><%= stateHash %></td>
+							</tr>
+							<tr>
+								<td>previousHash</td> <% if (previousBlockHash == 'undefined') { var previousBlockHash = ''; } %>
+								<td><%= previousBlockHash %></td>
+							</tr>
+
+							<% txlist.forEach(function (value, key) { %>
+							<tr>
+								<td>txid<br>payload
+								</td>
+								<td style="word-break: break-all;"><% value.forEach(function (value2, key) { %> <%= value2 %><br> <% }); %>
+								</td>
+							</tr>
+							<% }); %>
+						</tbody>
+					</table>
+					<% } %>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

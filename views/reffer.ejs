@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><% title %></title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/header %>
+	<div class="container documents">
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">GetCurrentBlock</h3>
+					</div>
+					<form action="/refferCurrentBlock" method="post" class="board-form" name="blockNo">
+						<select name="recvid" id="recvid">
+							<option value="peer1">peer1</option>
+							<option value="peer2">peer2</option>
+							<option value="peer3">peer3</option>
+							<option value="peer4">peer4</option>
+						</select>
+						<button type="submit" class="btn btn-success btn-block">現在のブロックの情報を取得</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">GetBlockInformation</h3>
+					</div>
+					<form action="/refferBlock" method="post" class="board-form">
+						<select name="recvid" id="recvid">
+							<option value="peer1">peer1</option>
+							<option value="peer2">peer2</option>
+							<option value="peer3">peer3</option>
+							<option value="peer4">peer4</option>
+						</select> <input type="text" class="form-control" placeholder="参照したいBlockNoを入力してください" name="blockNo" required>
+
+						<button type="submit" class="btn btn-success btn-block">ブロックの情報を取得</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">GetTransactionInfo</h3>
+					</div>
+					<form action="/refferTransaction" method="post" class="board-form">
+						<select name="recvid" id="recvid">
+							<option value="peer1">peer1</option>
+							<option value="peer2">peer2</option>
+							<option value="peer3">peer3</option>
+							<option value="peer4">peer4</option>
+						</select> <input type="text" class="form-control" placeholder="参照したいTransactionNoを入力してください" name="transactionID" required>
+						<button type="submit" class="btn btn-success btn-block">トランザクションの情報を取得</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		<!--
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">GetBlockInformation</h3>
+					</div>
+					<form action="/deployChaincode" method="post" class="board-form">
+						<select name="recvid" id="recvid">
+							<option value="b23476f36d234c06aff5e3f1822e3c03-vp0.us.blockchain.ibm.com">peer1:b23476f36d234c06aff5e3f1822e3c03-vp0.us.blockchain.ibm.com</option>
+							<option value="b23476f36d234c06aff5e3f1822e3c03-vp1.us.blockchain.ibm.com">peer2:b23476f36d234c06aff5e3f1822e3c03-vp1.us.blockchain.ibm.com</option>
+							<option value="b23476f36d234c06aff5e3f1822e3c03-vp2.us.blockchain.ibm.com">peer3:b23476f36d234c06aff5e3f1822e3c03-vp2.us.blockchain.ibm.com</option>
+							<option value="b23476f36d234c06aff5e3f1822e3c03-vp3.us.blockchain.ibm.com">peer4:b23476f36d234c06aff5e3f1822e3c03-vp3.us.blockchain.ibm.com</option>
+						</select> <input type="text" class="form-control" placeholder="deployするChaincodeのURLを入力してください" name="chaincodeURL">
+
+						<button type="submit" class="btn btn-success btn-block">deployする</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		 -->
+	</div>
+</body>
+</html>

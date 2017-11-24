@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><%= title %></title>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/header %>
+
+	<div class="container documents">
+		
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">取引履歴</h3>
+					</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th style="text-align:right;">ブロック No</th>
+								<th style="text-align:right;">送金元</th>
+								<th style="text-align:right;">送金先</th>
+								<th style="text-align:right;">金額</th>
+							</tr>
+								<% history.forEach(function (value, key) { %>
+								<tr>
+									<% value.forEach(function (value2, key2) { %>
+										<th style="text-align:right;"><%= value2 %></th>
+									<% }); %>
+								</tr>
+								<% }); %>
+
+						</thead>
+						<tbody id='tableItems'></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<br>
+
+	</div>
+
+
+</body>
+</html>

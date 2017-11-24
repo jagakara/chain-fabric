@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><%= title %></title>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/header %>
+
+	<div class="container documents">
+
+		<h4>
+		Welcome  <%= sendid %>
+		</h4>
+
+
+		<% if (emsg == 'undefined') { var emsg = ''; } %>
+        <%= emsg %> 
+
+		<% if (balance == 'undefined') { var balance = ''; } %>
+
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">残高</h3>
+					</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th><%= balance %> BG</th>
+							</tr>
+						</thead>
+
+						<tbody id='tableItems'></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">送金</h3>
+					</div>
+
+					<br>
+
+					<form action="/bankapp" method="post" class="board-form">
+						<div class="transfer">
+							送金元： <%= sendid %>
+							<input type="hidden" name="sendid" id="sendid" value=<%= sendid %> />
+
+							　　　　　　　　　送金先： <% if (recvid == 'undefined') { var recvid = ''; } %> 
+							<select name="recvid" id="recvid"> <%
+								recvid.forEach(function (value, key) { %>
+								<option value=<%= value %>><%= value %></option> <% }); %>
+							</select>
+							
+						</div>
+						<br> <input type="text" class="form-control" placeholder="送金額を入力して下さい。" name="AmountOfMoney" id="ammount" required>
+
+						<div class="row">
+							<div class="col-md-5"></div>
+							<div class="col-md-2">
+								<button type="submit" class="btn btn-success btn-block" value="送金" id="Transfer">送金</button>
+							</div>
+							<div class="col-md-5"></div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+		
+		<br>
+
+	</div>
+
+	<!-- <% include common/footer %> -->
+
+</body>
+</html>

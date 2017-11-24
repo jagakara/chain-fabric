@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><%= title %></title>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/login_header %>
+
+	<div class="container documents">
+		<% if (emsg == 'undefined') { var emsg = ''; } %>
+        <%= emsg %> 
+
+
+		<div class="row">
+		
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+
+
+				<form action="/register" method="post" class="board-form">
+					IDを入力してください。
+					<input type="text" name="id" class="form-control" placeholder="ID" required>
+					<br> <br>
+					パスワードを入力してください。
+					<input type="password" name="pw1" class="form-control" placeholder="PW" required>
+					もう一度パスワードを入力してください。
+					<input type="password" name="pw2" class="form-control" placeholder="PW" required>
+					<br> <br>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-success login-button">新規登録</button>
+						</div>
+					</div>
+				</form>
+				<br><br>
+
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

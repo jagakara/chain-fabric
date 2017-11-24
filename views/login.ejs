@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title><%= title %></title>
+
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<% include common/login_header %>
+
+	<div class="container documents">
+	<% if (typeof noUser !== 'undefined') { %>
+			<%= noUser %>
+	<% } %>
+	<% if (typeof msg !== 'undefined') { %>
+			<%= msg %>
+	<% } %>
+
+		<div class="row">
+
+
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+
+
+				<form action="/login" method="post" class="board-form">
+					<input type="text" name="id" class="form-control" placeholder="ID" required> <br> <br> <input type="password" name="pw"
+						class="form-control" placeholder="PW" required> <br> <br>
+					<div class="row">
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<button type="submit" class="btn btn-success login-button">ログイン</button>
+						</div>
+					</div>
+				</form>
+				<br><br>
+
+				<div class="register">
+					アカウントを持っていないですか？　<a href="register">新規登録</a>
+				</div>	
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
